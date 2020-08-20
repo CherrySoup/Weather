@@ -1,42 +1,53 @@
 <!--first-->
 <div class="container">
   <div class="main_buttons">
-<div class="butt_container" *ngIf="!allWeath">
-<input class="butt_input"  placeholder="Город" [(ngModel)]="searchIndex">
-    <button class="butt_button" (click)="checkBtn()">OK</button>
-</div>
+    <div class="butt_container" *ngIf="!allWeath">
+      <input class="butt_input" placeholder="Город" [(ngModel)]="searchIndex">
+      <button class="butt_button" (click)="checkBtn()">OK</button>
+    </div>
     <div class="butt_container1" *ngIf="allWeath">
       <div>{{searchIndex}}</div>
       <button class="switch_city" (click)="clear()">Сменить город</button>
     </div>
 
-    <div class="switch_button">  <button (click)="check_switch()">C° |  F</button></div>
+    <div class="switch_button">
+      <button (click)="check_switch()">C° | F</button>
+    </div>
 
   </div>
 
-<div class="data_container">
-<div *ngIf="allWeath">
-  <div *ngFor="let item of allWeath.weather">
-    <div class="main_data">
-      <div>
-      <img src="http://openweathermap.org/img/wn/{{item.icon}}@4x.png">
+  <div class="data_container">
+    <div *ngIf="allWeath">
+      <div *ngFor="let item of allWeath.weather">
+        <div class="main_data">
+          <div>
+            <img src="http://openweathermap.org/img/wn/{{item.icon}}@4x.png">
+          </div>
+          <div class="main_data_text" *ngIf="temp===true">  {{(allWeath.main.temp - 273).toFixed(0)}}°</div>
+          <div class="main_data_text" *ngIf="temp===false">  {{(allWeath.main.temp).toFixed(0)}} F</div>
+        </div>
+        <div class="lower_data">
+          <div class="lower_data_text"> Скорость ветра:
+            <div class="lowest_data_text">{{allWeath.wind.speed}} м/с</div>
+          </div>
+
+          <div class="lower_data_text"> Атмосферное давление:
+            <div class="lowest_data_text"> {{(allWeath.main.pressure / 1.3).toFixed(0)}} мм рт.ст</div>
+          </div>
+
+
+          <div class="lower_data_text"> Влажность воздуха:
+            <div class="lowest_data_text"> {{allWeath.main.humidity}}%</div>
+          </div>
+
+          <div class="lower_data_text" *ngIf="temp===true"> По ощущениям:
+            <div class="lowest_data_text"> {{(allWeath.main.feels_like - 273).toFixed(0)}}°</div>
+          </div>
+          <div class="lower_data_text" *ngIf="temp===false"> По ощущениям:
+            <div class="lowest_data_text"> {{(allWeath.main.feels_like).toFixed(0)}} F</div>
+          </div>
+        </div>
       </div>
-      <div class="main_data_text" *ngIf="temp===true">  {{(allWeath.main.temp-273).toFixed(0)}}°</div>
-      <div class="main_data_text" *ngIf="temp===false">  {{(allWeath.main.temp).toFixed(0)}} F</div>
-    </div>
-    <div class="lower_data">
-    <div class="lower_data_text"> Скорость ветра: <div class="lowest_data_text">{{allWeath.wind.speed}} м/с </div></div>
-
-    <div class="lower_data_text"> Атмосферное давление:  <div class="lowest_data_text"> {{(allWeath.main.pressure/1.3).toFixed(0)}} мм рт.ст</div></div>
-
-
-
-    <div class="lower_data_text"> Влажность воздуха: <div class="lowest_data_text"> {{allWeath.main.humidity}}% </div></div>
-
-    <div class="lower_data_text" *ngIf="temp===true"> По ощущениям: <div class="lowest_data_text"> {{(allWeath.main.feels_like-273).toFixed(0)}}°</div></div>
-      <div class="lower_data_text" *ngIf="temp===false"> По ощущениям: <div class="lowest_data_text"> {{(allWeath.main.feels_like).toFixed(0)}} F</div></div>
     </div>
   </div>
-</div>
-</div>
 </div>
