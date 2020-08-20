@@ -1,5 +1,5 @@
 import { Component} from '@angular/core';
-import { GoogleBooksService } from './google-books.servise';
+import { WeatherService } from './weather.service';
 
 
 @Component({
@@ -8,7 +8,7 @@ import { GoogleBooksService } from './google-books.servise';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent{
-  constructor(private gbs: GoogleBooksService) {
+  constructor(private gbs: WeatherService) {
   }
 
 

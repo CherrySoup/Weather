@@ -33,7 +33,7 @@
     <div class="lower_data_text"> Влажность воздуха: <div class="lowest_data_text"> {{allWeath.main.humidity}}% </div></div>
 
     <div class="lower_data_text" *ngIf="temp===true"> По ощущениям: <div class="lowest_data_text"> {{(allWeath.main.feels_like-273).toFixed(0)}}°</div></div>
-      <div class="lower_data_text" *ngIf="temp===false"> По ощущениям: <div class="lowest_data_text"> {{(allWeath.main.feels_like).toFixed(0)}}F</div></div>
+      <div class="lower_data_text" *ngIf="temp===false"> По ощущениям: <div class="lowest_data_text"> {{(allWeath.main.feels_like).toFixed(0)}} F</div></div>
     </div>
   </div>
 </div>

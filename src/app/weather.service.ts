@@ -48,7 +48,7 @@ export type Weath = {
 };
 
 @Injectable({ providedIn: 'root' })
-export class GoogleBooksService {
+export class WeatherService {
 
   private API_PATH = 'http://api.openweathermap.org/data/2.5/weather';
 
