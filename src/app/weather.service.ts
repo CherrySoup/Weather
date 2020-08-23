@@ -1,12 +1,13 @@
-import { HttpClient } from '@angular/common/http';
-import { Injectable } from '@angular/core';
-import { Observable } from 'rxjs';
+import {HttpClient} from '@angular/common/http';
+import {Injectable} from '@angular/core';
+import {Observable} from 'rxjs';
 
 
 export type Weath = {
   'coord': {
     'lon': string,
-    'lat': string},
+    'lat': string
+  },
   'weather': [
     {
       'id': string,
@@ -47,12 +48,13 @@ export type Weath = {
   'cod': string
 };
 
-@Injectable({ providedIn: 'root' })
+@Injectable({providedIn: 'root'})
 export class WeatherService {
 
   private API_PATH = 'http://api.openweathermap.org/data/2.5/weather';
 
-  constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient) {
+  }
 
   search(query: string): Observable<Weath> {
     return this.http

@@ -1,9 +1,8 @@
-<!--first-->
 <div class="container">
   <div class="main_buttons">
     <div class="butt_container" *ngIf="!allWeath">
       <input class="butt_input" placeholder="Город" [(ngModel)]="searchIndex">
-      <button class="butt_button" (click)="checkBtn()">OK</button>
+      <button class="butt_button" (click)="checkCity()">OK</button>
     </div>
     <div class="butt_container1" *ngIf="allWeath">
       <div>{{searchIndex}}</div>
@@ -11,7 +10,7 @@
     </div>
 
     <div class="switch_button">
-      <button (click)="check_switch()">C° | F</button>
+      <button (click)="switchTemp()">C° | F</button>
     </div>
 
   </div>
