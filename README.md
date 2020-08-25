@@ -1,5 +1,4 @@
 # Weather
-Приложение, отображающее погодные условия для выбранного города на основе сервиса openweathermap 
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 9.1.7.
 
