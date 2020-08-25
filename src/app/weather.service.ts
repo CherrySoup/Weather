@@ -19,10 +19,10 @@ export type Weath = {
   'base': string,
   'main': {
     'temp': number,
-    'feels_like': string,
+    'feels_like': number,
     'temp_min': string,
     'temp_max': string,
-    'pressure': string,
+    'pressure': number,
     'humidity': string
   },
   'visibility': string,

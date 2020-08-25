@@ -1,5 +1,5 @@
 import {Component} from '@angular/core';
-import {WeatherService} from './weather.service';
+import {Weath, WeatherService} from './weather.service';
 
 
 @Component({
@@ -11,9 +11,8 @@ export class AppComponent {
   constructor(private gbs: WeatherService) {
   }
 
-
-  allWeath;
-  searchIndex;
+  allWeath: Weath;
+  searchIndex: string;
   temp = true;
 
   switchTemp() {
